@@ -40,7 +40,7 @@ git commit -m "upload bed files hg19 and hg38"
 git push
 ```
 
-Создаём гистограммы распределений длины с помощью [скрипта](src/len_list.r)
+Создаём гистограммы распределений длины с помощью [скрипта](src/len_hist.r)
 
 [Распределение для ENCFF567HEH.hg19](results/len_hist.H3K9me3_K562.ENCFF567HEH.hg19.pdf)
 
