@@ -121,7 +121,7 @@ also git add commit push
 
 Участки: chr1:3,785,165-3,785,265
 
-Ассоциируем файлы с помощью [скрипта](ChIPpeakAnno.r)
+Ассоциируем файлы с помощью [скрипта](src/ChIPpeakAnno.r)
 
 Проводим анализ с нашим [файлом](data/H3K4me3_A549.intersect_with_DeepZ.genes_uniq.txt)
 
