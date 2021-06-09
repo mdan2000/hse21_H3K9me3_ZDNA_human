@@ -41,27 +41,40 @@ git push
 ```
 
 Создаём гистограммы распределений длины с помощью [скрипта](src/len_list.r)
+
 [Распределение для ENCFF567HEH.hg19](results/len_hist.H3K9me3_K562.ENCFF567HEH.hg19.pdf)
+
 [Распределение для ENCFF567HEH.hg38](results/len_hist.H3K9me3_K562.ENCFF567HEH.hg38.pdf)
+
 [Распределение для ENCFF963GZJ.hg19](results/len_hist.H3K9me3_K562.ENCFF963GZJ.hg19.pdf)
+
 [Распределение для ENCFF963GZJ.hg38](results/len_hist.H3K9me3_K562.ENCFF963GZJ.hg38.pdf)
 
 Количество пиков:
+
 Для ENCFF567HEH.hg38 - 24100
+
 Для ENCFF567HEH.hg19 - 23889 (потеряли 201 пик)
+
 Для ENCFF963GZJ.hg38 - 25513
+
 Для ENCFF963GZJ.hg19 - 25411 (потеряли 102 пика)
 
 Выкидываем лишние геномы: для ENCFF67.HEH я взял геномы длиной меньше 1300, для 963GZJ длиной меньше 1000. Фильтруем с помощью [скрипта](src/filter_peaks.r)
 После фильтрации получились такие распределения:
+
 [Распределение для ENCFF567HEH](results/filter_peaks.H3K9me3_K562.ENCFF567HEH.hg19.filtered.hist.pdf)
+
 [Распределение для ENCFF963GZJ](results/filter_peaks.H3K9me3_K562.ENCFF963GZJ.hg19.filtered.hist.pdf)
 
 Рисуем pie-chart график с помощью [скрипта](src/chep_seeker.r):
+
 [ENCFF963GZJ](results/chip_seeker.H3K9me3_K562.ENCFF963GZJ.hg19.filtered.plotAnnoPie.png)
+
 [ENCFF567HEH](results/chip_seeker.H3K9me3_K562.ENCFF567HEH.hg19.filtered.plotAnnoPie.png)
 
 Загружаем наши полученные отфильтрованные bed файлы на гитхаб (просто upload files на нашем пк).
+
 На рабочем сервере делаем git pull, у нас подгрузились файлы с отфильтрованными .bed файлами.
 
 Далее, на сервере с помощью
@@ -83,9 +96,11 @@ cat  *.filtered.bed | sort -k1,1 -k2,2n | bedtools merge > H3K9me3_K562.merge.hg
 wget https://raw.githubusercontent.com/Nazar1997/DeepZ/master/annotation/DeepZ.bed
 ```
 С помощью нам уже знакомого [скрипта](src/len_hist.r) строим распределение пиков
+
 [Распределение DeepZ](results/len_hist.DeepZ.pdf)
 
 С помощью тоже знакомого [скрипта](src/chep_seeker.r) получаем информацию о расположении участков:
+
 [DeepZ](results/chip_seeker.DeepZ.plotAnnoPie.png)
 
 ---
@@ -97,10 +112,15 @@ wget https://raw.githubusercontent.com/Nazar1997/DeepZ/master/annotation/DeepZ.b
 bedtools intersect -a DeepZ.bed -b H3K9me3_K562.merge.hg19.bed > H3K9me3_K562.intersect_with_DeepZ.bed
 ```
 also git add commit push
+
 Визиуализируем в геномном браузере полученные результаты:
+
 [Сессия](results/my_session)
+
 [Скрин](results/ucsc2.PNG)
+
 Участки: chr1:3,785,165-3,785,265
 
 Проводим анализ с нашим [файлом](data/H3K4me3_A549.intersect_with_DeepZ.genes_uniq.txt)
+
 Получаем [результат](results.PNG) (значимых результатов нет)
