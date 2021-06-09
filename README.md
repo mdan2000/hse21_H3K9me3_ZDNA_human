@@ -3,7 +3,7 @@
 
 # Отчёт
 ---
-#Анализ пиков гистоновой метки
+# Анализ пиков гистоновой метки
 Прежде всего нам нужно создать этот репозиторий (как не странно) с непустым README.md и установить свои credential на рабочем сервере:
 ```
 git config --global user.name "mdan2000"
@@ -90,7 +90,7 @@ cat  *.filtered.bed | sort -k1,1 -k2,2n | bedtools merge > H3K9me3_K562.merge.hg
 [Браузер](results/ucsc1.PNG)
 
 ---
-#Анализ вторичной структуры ДНК
+# Анализ вторичной структуры ДНК
 Скачиваем к себе и на рабочий сервер на рабочий сервер DeepZ.bed:
 ```
 wget https://raw.githubusercontent.com/Nazar1997/DeepZ/master/annotation/DeepZ.bed
@@ -105,7 +105,7 @@ wget https://raw.githubusercontent.com/Nazar1997/DeepZ/master/annotation/DeepZ.b
 
 ---
 
-#Анализ пересечений гистоновой метки и структуры ДНК
+# Анализ пересечений гистоновой метки и структуры ДНК
 
 С помощью команды 
 ```
