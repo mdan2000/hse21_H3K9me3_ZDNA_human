@@ -123,4 +123,4 @@ also git add commit push
 
 Проводим анализ с нашим [файлом](data/H3K4me3_A549.intersect_with_DeepZ.genes_uniq.txt)
 
-Получаем [результат](results.PNG) (значимых результатов нет)
+Получаем [результат](pant.PNG) (значимых результатов нет)
