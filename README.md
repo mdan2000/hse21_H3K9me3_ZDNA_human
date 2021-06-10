@@ -3,7 +3,8 @@
 
 ---
 # Контакты
-tg: t.me/math_hse_boy
+[tg](t.me/math_hse_boy)
+
 e-mail: mdan_2000@mail.ru
 
 # Отчёт
